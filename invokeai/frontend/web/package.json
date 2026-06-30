@@ -19,9 +19,9 @@
     "dist"
   ],
   "scripts": {
-    "dev": "vite dev",
-    "dev:host": "vite dev --host",
-    "build": "pnpm run lint && vitest run && vite build",
+    "dev": "node init && vite dev",
+    "dev:host": "node init && vite dev --host",
+    "build": "node init && pnpm run lint && vitest run && vite build",
     "typegen": "node scripts/typegen.js",
     "preview": "vite preview",
     "lint:knip": "knip --tags=-knipignore",
@@ -33,7 +33,7 @@
     "fix": "eslint --fix . && prettier --log-level warn --write .",
     "preinstall": "npx only-allow pnpm",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build",
+    "build-storybook": "node init && storybook build",
     "test": "vitest",
     "test:run": "vitest run",
     "test:ui": "vitest --coverage --ui",
